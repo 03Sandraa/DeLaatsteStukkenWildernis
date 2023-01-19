@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Frame4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #737373;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y="729" width="1923" height="351"/>
+  <rect class="cls-1" x="11.6" y="444.12" width="119.14" height="462.64"/>
+  <rect class="cls-1" x="218.94" y="556.3" width="159.37" height="339.63"/>
+  <rect class="cls-1" x="396.11" y="277.02" width="188" height="639.8"/>
+  <rect class="cls-1" x="603.44" y="506.79" width="178.71" height="337.31"/>
+  <rect class="cls-1" x="1203.79" y="342.78" width="139.26" height="499"/>
+  <rect class="cls-1" x="838.35" y="568.3" width="175.62" height="236.73"/>
+  <rect class="cls-1" x="1450.6" y="432.12" width="119.14" height="462.64"/>
+  <rect class="cls-1" x="1657.94" y="544.3" width="159.37" height="339.63"/>
+  <rect class="cls-1" x="1835.11" y="265.02" width="87.89" height="639.8"/>
+</svg>

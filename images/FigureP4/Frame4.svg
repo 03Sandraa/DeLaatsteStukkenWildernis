@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Frame4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c27536;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m1920,744c-81.01-20.21-211.15-47.9-373-60-403.27-30.14-605.52,66.31-1059,80-112.75,3.4-281.01,2.9-488-20v364h1920v-364Z"/>
+</svg>

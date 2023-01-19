@@ -1,0 +1,1404 @@
+:root {
+    --FontColorPrimary: rgb(255, 255, 255);
+    --FontColorWhite: rgb(255, 255, 255);
+    --BGColor: #150000;
+    --LoadBar: rgb(190, 243, 192);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+main {
+    overflow: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    -webkit-overflow-scrolling: touch;
+}
+
+section {
+    height: 100vh;
+    min-width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --------------------
+-------- Text ---------
+-------------------- */
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+
+}
+
+p {
+    font-size: 1.5rem;
+    color: var(--FontColorPrimary);
+    font-weight: 300;
+}
+
+/* --------------------
+------ NiveauNav ------
+-------------------- */
+/* 
+.NiveauNav {
+    position: fixed;
+    right: 0;
+    top: 45%;
+    z-index: 100;
+}
+
+.NiveauNav ol {
+    position: relative;
+    padding-right: 2.5rem;
+}
+
+.NiveauNav ol li {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 2rem;
+}
+
+.NiveauNav ol li button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(232, 232, 232, 0.284);
+    border: .2rem solid rgba(232, 232, 232, 0.284);
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s;
+}
+
+.NiveauNav ol li:hover button,
+.Niveau1 .NiveauNav ol li:nth-of-type(2) button,
+.Niveau2 .NiveauNav ol li:nth-of-type(3) button,
+.Niveau3 .NiveauNav ol li:nth-of-type(4) button {
+    background-color: rgba(232, 232, 232, 0.759);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.NiveauNav ol li p {
+    color: rgba(232, 232, 232, 0);
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s;
+}
+
+.NiveauNav ol li:hover p {
+    color: rgba(232, 232, 232, 0.759);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.NiveauNav ol li:nth-of-type(1) {
+    position: absolute;
+    right: 0;
+    transform: rotate(90deg) translate(1rem, -3.5rem);
+}
+
+.NiveauNav ol li:nth-of-type(1) p {
+    color: rgba(232, 232, 232, 0.41);
+    text-align: center;
+    font-size: 2.5rem;
+
+}
+
+.NiveauNav ol:hover li:nth-of-type(1) p {
+    color: rgba(232, 232, 232, 0.759);
+} */
+
+/* --------------------
+------ IndexNav -------
+-------------------- */
+
+.IndexNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.IndexNav ol {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.IndexNav ol li {
+    list-style: none;
+    height: .5rem;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.IndexNav ol li a {
+    text-decoration: none;
+    color: var(--FontColorPrimary);
+}
+
+.IndexNav ol li::before {
+    content: '';
+    height: 100%;
+    width: 0%;
+
+    position: absolute;
+    left: 0;
+    background-color: var(--LoadBar);
+    border-radius: 0 2rem 2rem 0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.IndexNav ol li.active::before {
+    width: 120%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.HoofdstukkenNav ol {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 6rem;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3rem;
+    z-index: 100;
+}
+
+.HoofdstukkenNav ol li {
+    list-style: none;
+}
+
+.HoofdstukkenNav ol li a{
+    color: var(--FontColorWhite);
+    text-decoration: none;
+    width: 100%;
+    position: relative;
+    font-weight: 500;
+}
+
+.HoofdstukkenNav ol li a::before{
+    content: '';
+    height: 0.15rem;
+    width: 0%;
+    background-color: var(--FontColorWhite);
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.HoofdstukkenNav ol li:hover a::before, .HoofdstukkenNav ol li.active a::before{
+    width: 100%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.HoofdstukkenNav ol li:last-of-type{
+    padding-right: 4rem;
+}
+
+
+/* --------------------
+------- Intro ---------
+-------------------- */
+
+#Intro {
+    z-index: 1000;
+}
+
+#Intro h1 {
+    color: var(--FontColorWhite);
+    transform: translateY(50vh);
+    margin: 0 2rem;
+}
+
+#Intro figure {
+    width: 100vw;
+    height: 100Vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#Intro figure div:not(figure div:last-of-type) {
+    /* Zorgt ervoor dat de afbeeldingen over elkaar heen komen en dat deze altijd beeld vullend blijft*/
+
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+#Intro figure div:last-of-type {
+    /* Regelt dat de h1 in het midden staat */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+#Intro figure div div img {
+    /* Zorgt ervoor dat de afbeelding wordt vergroot, in het midden staat en daardoor altijd in beeld blijft bij hoveren */
+
+    min-height: 100vh;
+    transform: scale(1.75);
+    display: grid;
+    justify-items: center;
+}
+
+#Intro>div {
+    position: absolute;
+    bottom: 8vh;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+#Intro>div>a {
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(232, 232, 232, 0.241);
+    padding: .75rem;
+    border-radius: 50%;
+    text-decoration: none;
+    color: var(--FontColorWhite);
+    display: grid;
+    place-items: center;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+#Intro>div>a:hover {
+    background-color: rgba(232, 232, 232, 0.435);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+#Intro>div>a>img {
+    width: 3rem;
+    height: 3rem;
+    transform: translateX(.3rem);
+    opacity: 0.5;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+#Intro>div>a:hover>img {
+    opacity: 0.9;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+/* --------------------
+-- Paragraph Algemeen -
+-------------------- */
+
+.ContentContainer {
+    position: relative;
+    /* height: 100%; */
+}
+
+.ContentNiveauNav {
+    position: fixed;
+    top: 0%;
+    left: 4vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 101;
+}
+
+
+.ContentNiveauNav li a {
+    width: 100%;
+    height: 100%;
+    padding: 0rem .6rem;
+}
+
+.ContentNiveauNav li.Active,
+.ContentNiveauNavFake li.Active {
+    background-color: rgba(232, 232, 232, 0.5);
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+}
+
+.ContentNiveauNav li:hover,
+.ContentNiveauNavFake li:hover {
+    background-color: rgba(232, 232, 232, 0.5);
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+}
+
+.ContentNiveauNav li,
+.ContentNiveauNavFake li {
+    list-style: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgba(232, 232, 232, 0.241);
+    border-radius: 50%;
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+}
+
+.ContentNiveauNavFake {
+    position: absolute;
+    top: 0%;
+    left: 4vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+article{
+    position: relative;
+}
+
+.ArrowDown{
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+}
+.ArrowDown img, .ArrowUp img{
+    width: 4rem;
+    display: block;
+    margin: auto;
+    opacity: .1;
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+}
+
+.ArrowDown img:hover, .ArrowUp img:hover{
+    opacity: 1;
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 500ms;
+}
+
+.ArrowUp{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    z-index: 101;
+}
+
+/* .Niveau1 .TekstN1,
+.Niveau2 .TekstN2,
+.Niveau3 .TekstN3 {
+    display: block;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.Niveau1 .TekstN2,
+.Niveau1 .TekstN3,
+.Niveau2 .TekstN1,
+.Niveau2 .TekstN3,
+.Niveau3 .TekstN1,
+.Niveau3 .TekstN2 {
+    display: none;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+} */
+
+
+.TekstContainer {
+    width: 45vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: 0 3rem;
+    background-color: var(--BGColor);
+}
+
+.TekstContainer p {
+    max-width: 40rem;
+}
+
+/* .ParagraphFrame{
+    position: absolute;
+    top: 0;
+} */
+
+main section:not(main section:first-of-type) {
+    background-color: var(--BGColor);
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    position: relative;
+    width: 100vw;
+}
+
+main section:not(main section:first-of-type) article {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+    background-color: blueviolet;
+
+}
+
+main section figure:not(main section:first-of-type figure) {
+    height: 100vh;
+    width: 50vw;
+    overflow: hidden;
+}
+
+#Paragraph1 figure,
+#Paragraph3 figure,
+#Paragraph5 figure,
+#Paragraph7 figure,
+#Paragraph9 figure,
+#Paragraph11 figure,
+#Paragraph13 figure,
+#Paragraph15 figure,
+#Paragraph17 figure,
+#Paragraph19 figure,
+#Paragraph21 figure,
+#Paragraph23 figure,
+#Paragraph25 figure {
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+}
+
+#Paragraph1>figure>img:first-of-type,
+#Paragraph3>figure>img:first-of-type,
+#Paragraph5>figure>img:first-of-type,
+#Paragraph7>figure>img:first-of-type,
+#Paragraph9>figure>img:first-of-type,
+#Paragraph11>figure>img:first-of-type,
+#Paragraph13>figure>img:first-of-type,
+#Paragraph15>figure>img:first-of-type,
+#Paragraph17>figure>img:first-of-type,
+#Paragraph19>figure>img:first-of-type,
+#Paragraph21>figure>img:first-of-type,
+#Paragraph23>figure>img:first-of-type,
+#Paragraph25>figure>img:first-of-type {
+    position: absolute;
+    height: 100%;
+    z-index: 50;
+    filter: drop-shadow(0.1rem 0.2rem 0.5rem rgb(0 0 0 / 0.4));
+
+}
+
+#Paragraph1>figure>div,
+#Paragraph3>figure>div,
+#Paragraph5>figure>div,
+#Paragraph7>figure>div,
+#Paragraph9>figure>div,
+#Paragraph11>figure>div,
+#Paragraph13>figure>div,
+#Paragraph15>figure>div,
+#Paragraph17>figure>div,
+#Paragraph19>figure>div,
+#Paragraph21>figure>div,
+#Paragraph23>figure>div,
+#Paragraph25>figure>div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#Paragraph1>figure>div img,
+#Paragraph3>figure>div img,
+#Paragraph5>figure>div img,
+#Paragraph7>figure>div img,
+#Paragraph9>figure>div img,
+#Paragraph11>figure>div img,
+#Paragraph13>figure>div img,
+#Paragraph15>figure>div img,
+#Paragraph17>figure>div img,
+#Paragraph19>figure>div img,
+#Paragraph21>figure>div img,
+#Paragraph23>figure>div img,
+#Paragraph25>figure>div img {
+    height: 100vh;
+    transform: scale(1.75);
+}
+
+#Paragraph1>figure>div img,
+#Paragraph3>figure>div img,
+#Paragraph5>figure>div img {
+    transform: scale(1.5) translateX(0rem);
+}
+
+#Paragraph2>figure>div img,
+#Paragraph4>figure>div img,
+#Paragraph6>figure>div img {
+    transform: scale(1.5) translateX(-32%);
+}
+
+#Paragraph7>figure>div img,
+#Paragraph9>figure>div img {
+    transform: scale(1.3) translate(-10%, 5%);
+}
+
+#Paragraph8>figure>div img {
+    transform: scale(1.3) translate(-50%, 5%);
+}
+
+#Paragraph11>figure>div img,
+#Paragraph13>figure>div img,
+#Paragraph15>figure>div img {
+    transform: scale(1.5) translate(0%, 5%);
+}
+
+#Paragraph10>figure>div img,
+#Paragraph12>figure>div img,
+#Paragraph14>figure>div img {
+    transform: scale(1.5) translate(-32%, 5%);
+}
+
+#Paragraph17>figure>div img,
+#Paragraph19>figure>div img {
+    transform: scale(1.5) translate(0%, 5%);
+}
+
+#Paragraph16>figure>div img,
+#Paragraph18>figure>div img {
+    transform: scale(1.5) translate(-32%, 5%);
+}
+
+#Paragraph21>figure>div img,
+#Paragraph23>figure>div img {
+    transform: scale(1.5) translate(0%, 5%);
+}
+
+#Paragraph20>figure>div img,
+#Paragraph22>figure>div img {
+    transform: scale(1.5) translate(-32%, 5%);
+}
+
+#Paragraph2 figure,
+#Paragraph4 figure,
+#Paragraph6 figure,
+#Paragraph8 figure,
+#Paragraph10 figure,
+#Paragraph12 figure,
+#Paragraph14 figure,
+#Paragraph16 figure,
+#Paragraph18 figure,
+#Paragraph20 figure,
+#Paragraph22 figure,
+#Paragraph24 figure {
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+#Paragraph2>figure>img:first-of-type,
+#Paragraph4>figure>img:first-of-type,
+#Paragraph6>figure>img:first-of-type,
+#Paragraph8>figure>img:first-of-type,
+#Paragraph10>figure>img:first-of-type,
+#Paragraph12>figure>img:first-of-type,
+#Paragraph14>figure>img:first-of-type,
+#Paragraph16>figure>img:first-of-type,
+#Paragraph18>figure>img:first-of-type,
+#Paragraph20>figure>img:first-of-type,
+#Paragraph22>figure>img:first-of-type,
+#Paragraph24>figure>img:first-of-type {
+    height: 100vh;
+    z-index: 50;
+    display: block;
+    margin-left: auto;
+    filter: drop-shadow(-0.1rem -0.2rem 0.5rem rgb(0 0 0 / 0.4));
+}
+
+#Paragraph2>figure>div,
+#Paragraph4>figure>div,
+#Paragraph6>figure>div,
+#Paragraph8>figure>div,
+#Paragraph10>figure>div,
+#Paragraph12>figure>div,
+#Paragraph14>figure>div,
+#Paragraph16>figure>div,
+#Paragraph18>figure>div,
+#Paragraph20>figure>div,
+#Paragraph22>figure>div,
+#Paragraph24>figure>div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#Paragraph2>figure>div img,
+#Paragraph4>figure>div img,
+#Paragraph6>figure>div img,
+#Paragraph8>figure>div img,
+#Paragraph10>figure>div img,
+#Paragraph12>figure>div img,
+#Paragraph14>figure>div img,
+#Paragraph16>figure>div img,
+#Paragraph18>figure>div img,
+#Paragraph20>figure>div img,
+#Paragraph22>figure>div img,
+#Paragraph24>figure>div img {
+    height: 100vh;
+}
+
+/* --------------------
+----- Paragraph 1 -----
+-------------------- */
+
+#Paragraph1 .TekstN1 {
+    font-size: 1.5rem;
+}
+
+#Paragraph1 .TekstN1 span {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#Paragraph1 .TekstN2 {
+    font-size: 1.5rem;
+}
+
+#Paragraph1 .TekstN2 span:first-of-type {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#Paragraph1 .TekstN2 span {
+    opacity: .5;
+}
+
+#Paragraph1 .TekstN2 span:last-of-type {
+    font-size: 2rem;
+    opacity: 1;
+    font-weight: 400;
+}
+
+#Paragraph1 .TekstN3 {
+    font-size: 1.5rem;
+}
+
+#Paragraph1 .TekstN3:first-of-type span:first-of-type {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#Paragraph1 .TekstN3 span {
+    opacity: .5;
+}
+
+#Paragraph1 .TekstN3:nth-of-type(2) {
+    margin-top: .5rem;
+}
+
+#Paragraph1 .TekstN3:nth-of-type(3) {
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    opacity: 1;
+    font-weight: 400;
+}
+
+
+/* --------------------
+----- Paragraph 2 -----
+-------------------- */
+
+#Paragraph2 .TekstN1 {
+    font-size: 1.5rem;
+}
+
+#Paragraph2 .TekstN1 span {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#Paragraph2 .TekstN2 {
+    font-size: 1.5rem;
+}
+
+#Paragraph2 .TekstN2 span:first-of-type,
+#Paragraph2 .TekstN2 span:nth-of-type(2) {
+    opacity: .5;
+}
+
+#Paragraph2 .TekstN2:nth-of-type(2) {
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+#Paragraph2 .TekstN3 {
+    font-size: 1.5rem;
+}
+
+#Paragraph2 .TekstN3:nth-of-type(1) {
+    opacity: .5;
+}
+
+#Paragraph2 .TekstN3:nth-of-type(2) {
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+#Paragraph2 .TekstN3:nth-of-type(2) span {
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 3 -----
+-------------------- */
+
+#Paragraph3 .TekstN1 {
+    font-size: 1.5rem;
+}
+
+#Paragraph3 .TekstN1 span {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+
+#Paragraph3 .TekstN2 {
+    font-size: 1.5rem;
+}
+
+#Paragraph3 .TekstN2:first-of-type span {
+    opacity: .5;
+}
+
+#Paragraph3 .TekstN2:nth-of-type(2) {
+    margin-top: 1.5rem;
+}
+
+#Paragraph3 .TekstN2:nth-of-type(3) {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph3 .TekstN3 {
+    font-size: 1.5rem;
+}
+
+#Paragraph3 .TekstN3:first-of-type,
+#Paragraph3 .TekstN3:nth-of-type(2) {
+    opacity: .5;
+}
+
+#Paragraph3 .TekstN3:nth-of-type(2) {
+    margin-top: 1.5rem;
+}
+
+#Paragraph3 .TekstN3:nth-of-type(3) {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph3 .TekstN3:nth-of-type(3) span {
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 4 -----
+-------------------- */
+
+#Paragraph4 {
+    font-size: 1.5rem;
+}
+
+#Paragraph4 .TekstN1 span {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#Paragraph4 .TekstN2 span {
+    opacity: .5;
+}
+
+#Paragraph4 .TekstN2 span:first-of-type {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+/* --------------------
+----- Paragraph 5 -----
+-------------------- */
+
+#Paragraph5 {
+    font-size: 1.5rem;
+}
+
+#Paragraph5 .TekstN1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph5 .TekstN2:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 6 -----
+-------------------- */
+
+#Paragraph6 {
+    font-size: 1.5rem;
+}
+
+#Paragraph6 .TekstN1:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph6 .TekstN1:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+
+#Paragraph6 .TekstN2:nth-of-type(3) {
+    margin-top: 1.5rem;
+}
+
+#Paragraph6 .TekstN2:nth-of-type(2),
+#Paragraph6 .TekstN2:nth-of-type(3) span {
+    opacity: .5;
+}
+
+#Paragraph6 .TekstN2:nth-of-type(2) span {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --------------------
+----- Paragraph 7 -----
+-------------------- */
+
+#Paragraph7 {
+    font-size: 1.5rem;
+}
+
+#Paragraph7 .TekstN1:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph7 .TekstN1:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph7 .TekstN2:nth-of-type(2) {
+    margin-top: .5rem;
+}
+
+#Paragraph7 .TekstN2 span {
+    opacity: .5;
+}
+
+#Paragraph7 .TekstN2 span:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --------------------
+----- Paragraph 8 -----
+-------------------- */
+
+#Paragraph8 {
+    font-size: 1.5rem;
+}
+
+#Paragraph8 .TekstN1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph8 .TekstN2 span {
+    opacity: .5;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --------------------
+----- Paragraph 9 -----
+-------------------- */
+
+#Paragraph9 {
+    font-size: 1.5rem;
+}
+
+#Paragraph9 .TekstN1:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph9 .TekstN1:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph9 .TekstN2:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+#Paragraph9 .TekstN2:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph9 .TekstN2:nth-of-type(2) span {
+    opacity: .5;
+}
+
+
+#Paragraph9 .TekstN3:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+    margin-top: 1rem;
+}
+
+#Paragraph9 .TekstN3:nth-of-type(3) {
+    margin-top: 1rem;
+}
+
+#Paragraph9 .TekstN3:nth-of-type(3) span {
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 10 -----
+-------------------- */
+
+#Paragraph10 {
+    font-size: 1.5rem;
+}
+
+#Paragraph10 .TekstN1:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph10 .TekstN1:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph10 .TekstN2:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+#Paragraph10 .TekstN2:nth-of-type(2) {
+    margin-top: 1rem;
+    opacity: .5;
+}
+
+#Paragraph10 .TekstN2:nth-of-type(3) {
+    margin-top: 1rem;
+}
+
+
+#Paragraph10 .TekstN3:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+#Paragraph10 .TekstN3:nth-of-type(2) {
+    margin-top: 1rem;
+    opacity: .5;
+}
+
+#Paragraph10 .TekstN3:nth-of-type(3) {
+    margin-top: 1rem;
+}
+
+#Paragraph10 .TekstN3:nth-of-type(3) span {
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 11 -----
+-------------------- */
+
+#Paragraph11 {
+    font-size: 1.5rem;
+}
+
+#Paragraph11 .TekstN1:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph11 .TekstN1:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph11 .TekstN2:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+#Paragraph11 .TekstN2:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph11 .TekstN2:nth-of-type(2) span {
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 12 -----
+-------------------- */
+
+#Paragraph12 {
+    font-size: 1.5rem;
+}
+
+#Paragraph12 .TekstN1:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+#Paragraph12 .TekstN2:nth-of-type(1) {
+    opacity: .5;
+}
+
+#Paragraph12 .TekstN2:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    opacity: .5;
+}
+
+#Paragraph12 .TekstN2:nth-of-type(3) {
+    margin-top: 1rem;
+}
+
+#Paragraph12 .TekstN2:nth-of-type(3) span {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph12 .TekstN3:nth-of-type(1) span {
+    opacity: .5;
+}
+
+#Paragraph12 .TekstN3:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph12 .TekstN3:nth-of-type(2) span {
+    opacity: .5;
+}
+
+#Paragraph12 .TekstN3:nth-of-type(3) {
+    margin-top: 1rem;
+    opacity: .5;
+}
+
+
+/* --------------------
+----- Paragraph 13 -----
+-------------------- */
+
+#Paragraph13 {
+    font-size: 1.5rem;
+}
+
+#Paragraph13 .TekstN1:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* --------------------
+----- Paragraph 14 -----
+-------------------- */
+
+#Paragraph14 {
+    font-size: 1.5rem;
+}
+
+#Paragraph14 .TekstN1:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph14 .TekstN2:nth-of-type(1) {
+    opacity: .5;
+}
+
+#Paragraph14 .TekstN2:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+    margin-bottom: 1rem;
+}
+
+/* --------------------
+----- Paragraph 15 -----
+-------------------- */
+
+#Paragraph15 {
+    font-size: 1.5rem;
+}
+
+#Paragraph15 .TekstN1:nth-of-type(2) {
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+#Paragraph15 .TekstN2:first-of-type {
+    opacity: .5;
+    margin-bottom: 1rem;
+}
+
+#Paragraph15 .TekstN2:first-of-type span {
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+#Paragraph15 .TekstN2 span {
+    opacity: .5;
+}
+
+#Paragraph15 .TekstN2:nth-of-type(3) {
+    margin-top: 1rem;
+}
+
+/* --------------------
+----- Paragraph 16 -----
+-------------------- */
+
+#Paragraph16 {
+    font-size: 1.5rem;
+}
+
+#Paragraph16 .TekstN1:nth-of-type(2) {
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+#Paragraph16 .TekstN2:nth-of-type(1) {
+    opacity: .5;
+}
+
+#Paragraph16 .TekstN2:nth-of-type(2) span {
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    opacity: .5;
+}
+
+#Paragraph16 .TekstN2:nth-of-type(2) {
+    font-weight: 400;
+}
+
+/* --------------------
+----- Paragraph 17 -----
+-------------------- */
+
+#Paragraph17 {
+    font-size: 1.5rem;
+}
+
+#Paragraph17 .TekstN1:nth-of-type(1) {
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+#Paragraph17 .TekstN2:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+#Paragraph17 .TekstN2:nth-of-type(2) span:first-of-type {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph17 .TekstN2:nth-of-type(2) span:nth-of-type(2) {
+    opacity: .5;
+}
+
+#Paragraph17 .TekstN2:nth-of-type(1) span {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+/* --------------------
+----- Paragraph 18 -----
+-------------------- */
+
+#Paragraph18 {
+    font-size: 1.5rem;
+}
+
+#Paragraph18 .TekstN1:nth-of-type(1) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+#Paragraph18 .TekstN2:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+    margin-bottom: 1rem;
+}
+
+#Paragraph18 .TekstN2:nth-of-type(4) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* --------------------
+----- Paragraph 19 -----
+-------------------- */
+
+#Paragraph19 {
+    font-size: 1.5rem;
+}
+
+#Paragraph19 .TekstN1:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* --------------------
+----- Paragraph 20 -----
+-------------------- */
+
+#Paragraph20 {
+    font-size: 1.5rem;
+}
+
+#Paragraph20 .TekstN1 span {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph20 .TekstN2:first-of-type {
+    opacity: .5;
+    margin-bottom: 1rem;
+}
+
+#Paragraph20 .TekstN2 span {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --------------------
+----- Paragraph 21 -----
+-------------------- */
+
+#Paragraph21 {
+    font-size: 1.5rem;
+}
+
+#Paragraph21 .TekstN1:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+#Paragraph21 .TekstN2:nth-of-type(1) {
+    opacity: .5;
+}
+
+#Paragraph21 .TekstN2:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    opacity: .5;
+}
+
+#Paragraph21 .TekstN3:nth-of-type(1) {
+    margin-bottom: 1rem;
+}
+
+#Paragraph21 .TekstN3:nth-of-type(1) span:first-of-type {
+    opacity: .5;
+}
+
+#Paragraph21 .TekstN3:nth-of-type(1) span:nth-of-type(2) {
+    opacity: .5;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph21 .TekstN3:nth-of-type(2) span:first-of-type {
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 22 -----
+-------------------- */
+
+#Paragraph22 {
+    font-size: 1.5rem;
+}
+
+#Paragraph22 .TekstN1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#Paragraph22 .TekstN2 span {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+/* --------------------
+----- Paragraph 23 -----
+-------------------- */
+
+#Paragraph23 {
+    font-size: 1.5rem;
+}
+
+#Paragraph23 .TekstN1:nth-of-type(1) {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+#Paragraph23 .TekstN2:nth-of-type(1) {
+    margin-bottom: 1rem;
+}
+
+#Paragraph23 .TekstN2:nth-of-type(1) span {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+#Paragraph23 .TekstN2:nth-of-type(2) span {
+    opacity: .5;
+}

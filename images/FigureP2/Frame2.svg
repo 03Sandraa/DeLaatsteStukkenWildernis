@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Frame3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8c8c8c;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y="825" width="1926" height="255"/>
+  <rect class="cls-1" x="43.32" y="707.53" width="119.91" height="266.91"/>
+  <rect class="cls-1" x="312.55" y="504.07" width="157.82" height="452.58"/>
+  <rect class="cls-1" x="1062.21" y="691.29" width="148.54" height="273.87"/>
+  <rect class="cls-1" x="1219.22" y="707.78" width="116.82" height="200.37"/>
+  <rect class="cls-1" x="1380.18" y="523.41" width="116.82" height="441.75"/>
+  <rect class="cls-1" x="883.27" y="742.88" width="156.28" height="197.28"/>
+  <rect class="cls-1" x="1482.32" y="695.53" width="119.91" height="266.91"/>
+  <rect class="cls-1" x="1751.55" y="492.07" width="157.82" height="452.58"/>
+</svg>
