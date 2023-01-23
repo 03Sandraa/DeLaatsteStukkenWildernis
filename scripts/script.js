@@ -75,6 +75,17 @@ buttonNiveau3.addEventListener("click", e => {
     buttonNiveau2.classList.remove("Active");
 });
 
+const infoKnop = document.querySelector(".infoKnop");
+const infoCheat = document.querySelector(".infodiv");
+
+infoKnop.addEventListener("click", e => {
+    infoCheat.classList.remove("hide");
+});
+
+infoCheat.addEventListener("click", e => {
+    infoCheat.classList.add("hide");
+});
+
 // Zorgt voor een vloeiende overgang wanneer er op een a wordt geklikt
 // Bron: https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
 
